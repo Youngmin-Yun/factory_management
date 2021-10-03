@@ -1,0 +1,13 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.factorymanagement.mapper.CategoryMapper">
+    <insert id = "categoryInput">
+        INSERT INTO category(category) VALUES(#{category});
+    </insert>
+    <select id = "categoryList" resultType = "com.factorymanagement.vo.CategoryVO">
+        select * from category
+    </select>
+    <delete id = "categoryDelete">
+        delete from category where seq = #{seq}
+    </delete>
+</mapper>

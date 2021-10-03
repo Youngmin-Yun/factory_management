@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.factorymanagement.mapper.InventoryMapper">
+    <select id = "allItems" resultType = "com.factorymanagement.vo.InventoryVO">
+        <if test = 'item == null'>
+        select * from category c inner join warehousing w where c.seq = w.cate_seq;
+        </if>
+        select * from category c inner join warehousing w where c.seq = w.cate_seq and goods like #{item}
+    </select>
+</mapper>

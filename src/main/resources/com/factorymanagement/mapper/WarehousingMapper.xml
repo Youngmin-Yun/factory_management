@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd.mybatis-3-mapper.dtd">
+<mapper namespace = "com.factorymanagement.mapper.WarehousingMapper">
+    <insert id = "insertGoods">
+        INSERT INTO warehousing (cate_seq, goods, amount, warehousing_date, price) VALUES(#{cate_seq}, #{goods}, #{amount}, #{warehousing_date}, #{price});
+    </insert>
+    <select id = "duplicateGoods" resultType = "java.lang.Integer">
+        select count(*) from warehousing where goods = #{goods}
+    </select>
+</mapper>
